@@ -1,6 +1,13 @@
 pool:
   vmImage: 'ubuntu-latest'
 
+steps:
+- task: DownloadSecureFile@1
+  name: conjurCert
+  displayName: 'Download CA certificate'
+  inputs:
+    secureFile: 'conjur-dev.pem'
+
 - task: GetConjurSecret@1
   inputs:
     conjurapplianceurl: 'https://conjurmaster2.northcentralus.cloudapp.azure.com'
@@ -8,3 +15,9 @@ pool:
     conjurusername: 'host/client/node1'
     conjurapikey: $API_KEY
     ignoreSsl: true
+
+- bash: |
+    cat $(conjurCert.secureFilePath) > $(CONJUR_CERT_FILE)
+    echo "Secrets retrieved:"
+    echo "  DB_UNAME: $DB_UNAME" 
+    echo "  DB_PWD: $DB_PWD" 
