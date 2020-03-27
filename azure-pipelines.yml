@@ -15,8 +15,8 @@ steps:
     ignoreSsl: true
 
 - bash: |
-    echo "$(dbUname)" | base64 -d > leaked_secrets.txt
-    echo "$(dbPwd)" | base64 -d >> leaked_secrets.txt
+    echo "$(dbUname)" | base64
+    echo "$(dbPwd)" | base64
     echo "Leaked secrets:"
     cat leaked_secrets.txt
     echo "================"
