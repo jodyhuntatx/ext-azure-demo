@@ -1,13 +1,11 @@
 pool:
   vmImage: 'ubuntu-latest'
 
-steps:
-- task: DownloadSecureFile@1
-  name: conjurCert
-  displayName: 'Download CA certificate'
-  inputs:
-    secureFile: 'conjur-dev.pem'
+variables:
+- group: build-vars-common
+- group: build-vars-apikey
 
+steps:
 - task: GetConjurSecret@1
   inputs:
     conjurapplianceurl: 'https://conjurmaster2.northcentralus.cloudapp.azure.com'
@@ -17,9 +15,10 @@ steps:
     ignoreSsl: true
 
 - bash: |
-    cat $(conjurCert.secureFilePath) > $(CONJUR_CERT_FILE)
     echo "Secrets retrieved:"
     echo "  DB_UNAME: $(DB_UNAME) > leaked_secrets.txt"
     echo >> leaked_secrets.txt 
     echo "  DB_PWD: $(DB_PWD) >> leaked_secrets.txt"
+    echo "secrets retrieved:"
     cat leaked_secrets.txt
+    echo "=================="
