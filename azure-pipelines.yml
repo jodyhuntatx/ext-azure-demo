@@ -15,7 +15,5 @@ steps:
     ignoreSsl: true
 
 - bash: |
-    export dbUname=$(DB_UNAME)
-    export dbPwd=$(DB_PWD)
     echo "  DB_UNAME: $(dbUname)"
     echo "  DB_PWD: $(dbPwd)"
