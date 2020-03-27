@@ -15,9 +15,6 @@ steps:
     ignoreSsl: true
 
 - bash: |
-    echo "  DB_UNAME: $(DB_UNAME)" > leaked_secrets.txt
-    echo "" >> leaked_secrets.txt 
-    echo "  DB_PWD: $(DB_PWD)" >> leaked_secrets.txt
-    echo "Secrets retrieved:"
-    cat leaked_secrets.txt
-    echo "=================="
+    echo "  DB_UNAME: $(DB_UNAME)"
+    echo "  DB_PWD: $(DB_PWD)"
+    env | grep ^DB
