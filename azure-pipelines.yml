@@ -21,4 +21,5 @@ steps:
     echo "Secrets retrieved:"
     echo "  DB_UNAME: $(DB_UNAME) > leaked_secrets.txt"
     echo >> leaked_secrets.txt 
-    echo "  DB_PWD: $(DB_PWD) >> leaked_secrets.txt" 
+    echo "  DB_PWD: $(DB_PWD) >> leaked_secrets.txt"
+    cat leaked_secrets.txt
