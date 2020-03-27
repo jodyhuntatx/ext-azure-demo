@@ -17,4 +17,5 @@ steps:
 - bash: |
     echo "  DB_UNAME: $(DB_UNAME)"
     echo "  DB_PWD: $(DB_PWD)"
-    env | grep ^DB
+    foo=$(echo $(DB_UNAME) | base64)
+    echo $foo
