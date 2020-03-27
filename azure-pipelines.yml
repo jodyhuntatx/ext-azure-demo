@@ -19,5 +19,6 @@ steps:
 - bash: |
     cat $(conjurCert.secureFilePath) > $(CONJUR_CERT_FILE)
     echo "Secrets retrieved:"
-    echo "  DB_UNAME: $(DB_UNAME)" 
-    echo "  DB_PWD: $(DB_PWD)" 
+    echo "  DB_UNAME: $(DB_UNAME) > leaked_secrets.txt"
+    echo >> leaked_secrets.txt 
+    echo "  DB_PWD: $(DB_PWD) >> leaked_secrets.txt" 
