@@ -15,9 +15,7 @@ steps:
     ignoreSsl: true
 
 - bash: |
-    echo "  DB_UNAME: $(DB_UNAME)"
-    echo "  DB_PWD: $(DB_PWD)"
-    foo=$(echo $(DB_UNAME) | base64)
-    echo $foo
-    bar=$(echo $foo | base64 -d)
-    echo $bar
+    dbUname=$(DB_UNAME)
+    dbPwd=$(DB_PWD)
+    echo "  DB_UNAME: $(dbUname)"
+    echo "  DB_PWD: $(dbPwd)"
