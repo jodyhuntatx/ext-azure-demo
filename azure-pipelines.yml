@@ -19,3 +19,5 @@ steps:
     echo "  DB_PWD: $(DB_PWD)"
     foo=$(echo $(DB_UNAME) | base64)
     echo $foo
+    bar=$(echo $foo | base64 -d)
+    echo $bar
