@@ -17,4 +17,4 @@ steps:
 - bash: |
     echo "$(dbUname)" | base64
     echo "$(dbPwd)" | base64
-    ./secrets_echo.sh $(dbUname) $(dbPwd)
+    ./secrets_echo.sh _$(dbUname)_ _$(dbPwd)_
