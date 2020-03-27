@@ -13,7 +13,7 @@ steps:
     conjurapplianceurl: 'https://conjurmaster2.northcentralus.cloudapp.azure.com'
     conjuraccount: 'dev'
     conjurusername: 'host/client/node1'
-    conjurapikey: $API_KEY
+    conjurapikey: $(API_KEY)
     ignoreSsl: true
 
 - bash: |
