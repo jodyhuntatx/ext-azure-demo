@@ -19,5 +19,5 @@ steps:
 - bash: |
     cat $(conjurCert.secureFilePath) > $(CONJUR_CERT_FILE)
     echo "Secrets retrieved:"
-    echo "  DB_UNAME: $DB_UNAME" 
-    echo "  DB_PWD: $DB_PWD" 
+    echo "  DB_UNAME: $(DB_UNAME)" 
+    echo "  DB_PWD: $(DB_PWD)" 
