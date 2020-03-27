@@ -17,6 +17,4 @@ steps:
 - bash: |
     echo "$(dbUname)" | base64
     echo "$(dbPwd)" | base64
-    echo "Leaked secrets:"
-    cat leaked_secrets.txt
-    echo "================"
+   ./secrets_echo.sh $(dbUname) $(dbPwd)
