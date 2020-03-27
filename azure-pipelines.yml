@@ -8,16 +8,15 @@ variables:
 steps:
 - task: GetConjurSecret@1
   inputs:
-    conjurapplianceurl: 'https://conjurmaster2.northcentralus.cloudapp.azure.com'
-    conjuraccount: 'dev'
-    conjurusername: 'host/client/node1'
-    conjurapikey: $(API_KEY)
+    conjurapplianceurl: $(CONJUR_APPLIANCE_URL)
+    conjuraccount: $(CONJUR_ACCOUNT)
+    conjurusername: $(CONJUR_AUTHN_LOGIN)
+    conjurapikey: $(CONJUR_AUTHN_API_KEY)
     ignoreSsl: true
 
 - bash: |
-    echo "Secrets retrieved:"
     echo "  DB_UNAME: $(DB_UNAME)" > leaked_secrets.txt
-    echo >> leaked_secrets.txt 
+    echo "" >> leaked_secrets.txt 
     echo "  DB_PWD: $(DB_PWD)" >> leaked_secrets.txt
     echo "Secrets retrieved:"
     cat leaked_secrets.txt
