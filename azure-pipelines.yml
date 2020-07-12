@@ -6,13 +6,7 @@ variables:
 - group: build-vars-apikey
 
 steps:
-- task: GetConjurSecret@1
-  inputs:
-    conjurapplianceurl: $(CONJUR_APPLIANCE_URL)
-    conjuraccount: $(CONJUR_ACCOUNT)
-    conjurusername: $(CONJUR_AUTHN_LOGIN)
-    conjurapikey: $(CONJUR_AUTHN_API_KEY)
-    ignoreSsl: true
+
 
 - bash: |
     echo "$(TF_VAR_botName)" | base64
