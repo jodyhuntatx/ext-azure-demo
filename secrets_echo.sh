@@ -1,2 +1,2 @@
-echo "botUname: $1"
-echo "botToken: $2"
+echo "TF_VAR_botUname: $1"
+echo "TF_VAR_botToken: $2"
