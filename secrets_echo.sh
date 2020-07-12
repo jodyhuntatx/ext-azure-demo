@@ -1,2 +1,2 @@
-echo "DB_UNAME: $1"
-echo "DB_PWD: $2"
+echo "botUname: $1"
+echo "botToken: $2"
