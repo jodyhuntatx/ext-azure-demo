@@ -1,4 +1,4 @@
-variable "botUNAME" {
+variable "botUname" {
   description = "Git bot user name"
   default = "default"
 }
