@@ -8,11 +8,11 @@ variable "botToken" {
   default = "default"
 }
 
-output "botToken" {
+output "Gitbot token" {
   sensitive = true
   value = "${var.botToken}"
 }
 
-output "botName" {
+output "Gitbot name" {
   value = "${var.botName}"
 }
