@@ -15,7 +15,7 @@ steps:
     ignoreSsl: true
 
 - bash: |
-    echo "$(botUname)" | base64
-    echo "$(botToken)" | base64
-    ./secrets_echo.sh _$(botUname)_ _$(botPwd)_
+    echo "$(TF_VAR_botUname)" | base64
+    echo "$(TF_VAR_botToken)" | base64
+    ./secrets_echo.sh _$(TF_VAR_botUname)_ _$(TF_VAR_botToken)_
     terraform apply
