@@ -10,9 +10,9 @@ variable "botToken" {
 
 output "Gitbot-token" {
   sensitive = true
-  value = "${var.botToken}"
+  value = "var.botToken"
 }
 
 output "Gitbot-name" {
-  value = "${var.botName}"
+  value = "var.botName"
 }
