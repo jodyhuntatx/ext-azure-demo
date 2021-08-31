@@ -1,5 +1,4 @@
-pool:
-  vmImage: 'ubuntu-latest'
+pool: NewPool
 
 variables:
 - group: build-vars-common
