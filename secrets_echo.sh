@@ -1,2 +1,2 @@
-echo "TF_VAR_botName: $1"
-echo "TF_VAR_botToken: $2"
+echo "TF_VAR_AWSAccessKey: $1"
+echo "TF_VAR_AWSSecretKey: $2"
