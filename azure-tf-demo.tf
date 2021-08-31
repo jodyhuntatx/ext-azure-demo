@@ -1,18 +1,18 @@
-variable "botName" {
-  description = "Git bot user name"
+variable "AWSAccessKey" {
+  description = "AWS Access Key"
   default = "default"
 }
 
-variable "botToken" {
-  description = "Git bot token"
+variable "AWSSecretKey" {
+  description = "AWS Secret Key"
   default = "default"
 }
 
-output "Gitbot-token" {
+output "AWS-Access-Key" {
   sensitive = true
-  value = "var.botToken"
+  value = "var.AWSAccessKey"
 }
 
-output "Gitbot-name" {
-  value = "var.botName"
+output "AWS-Secret-Key" {
+  value = "var.AWSSecretKey"
 }
