@@ -16,7 +16,7 @@ steps:
 
 - bash: |
     terraform apply
-    echo "$(TF_VAR_botName)" | base64
-    echo "$(TF_VAR_botToken)" | base64
-    ./secrets_echo.sh _$(TF_VAR_botName)_ _$(TF_VAR_botToken)_
+    echo "$(TF_VAR_AWSAccessKey)" | base64
+    echo "$(TF_VAR_AWSSecretKey)" | base64
+    ./secrets_echo.sh _$(TF_VAR_AWSAccessKey)_ _$(TF_VAR_AWSSecretKey)_
     
